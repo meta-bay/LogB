@@ -9,12 +9,17 @@ function UserPosts() {
 
   useEffect(() => {
     fetchPosts();
-  }, [username]);
+  }, []);
 
   const fetchPosts = async () => {
     try {
       const response = await api.get(`/users/${username}/posts/`);
-      setPosts(response.data.results);
+
+      const sortedPosts = response.data.results.sort(
+        (a, b) => new Date(b.date_posted) - new Date(a.date_posted),
+      );
+
+      setPosts(sortedPosts);
     } catch (error) {
       console.error("Error fetching posts:", error);
     }

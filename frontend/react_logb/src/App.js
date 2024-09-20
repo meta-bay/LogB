@@ -19,7 +19,7 @@ function NavBar() {
     <nav className="nav">
       <div className="nav-container">
         <div className="nav-logo">
-          <Link to="/">MyBlog</Link>
+          <Link to="/">LogB</Link>
         </div>
         <ul className="nav-links">
           <li>

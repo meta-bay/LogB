@@ -10,7 +10,10 @@ function PostList() {
   useEffect(() => {
     getPosts()
       .then((response) => {
-        setPosts(response.data);
+        const sortedPosts = response.data.sort(
+          (a, b) => new Date(b.date_posted) - new Date(a.date_posted),
+        );
+        setPosts(sortedPosts);
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
