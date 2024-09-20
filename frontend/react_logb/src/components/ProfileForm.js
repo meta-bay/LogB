@@ -7,7 +7,6 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [profileForm, setProfileForm] = useState({
     username: "",
-    email: "",
     profileImage: null,
   });
   const [loading, setLoading] = useState(false);
@@ -25,7 +24,6 @@ const Profile = () => {
         // Update the form fields with fetched data
         setProfileForm({
           username: response.data.username,
-          email: response.data.email,
           profileImage: null,
         });
         setLoading(false);
@@ -63,7 +61,6 @@ const Profile = () => {
 
     const formData = new FormData();
     formData.append("username", profileForm.username);
-    formData.append("email", profileForm.email);
 
     // Only append the image if there is one
     if (profileForm.profileImage instanceof File) {
@@ -125,18 +122,6 @@ const Profile = () => {
             name="username"
             className="form-input"
             value={profileForm.username}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="form-input"
-            value={profileForm.email}
             onChange={handleChange}
           />
         </div>
