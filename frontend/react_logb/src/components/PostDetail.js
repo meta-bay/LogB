@@ -54,6 +54,12 @@ function PostDetail() {
     }
   };
 
+  const handleCancel = () => {
+    // Revert editedPost to the original post and exit editing mode
+    setEditedPost(post);
+    setIsEditing(false);
+  };
+
   const handleChange = (e) => {
     setEditedPost({ ...editedPost, [e.target.name]: e.target.value });
   };
@@ -92,6 +98,11 @@ function PostDetail() {
             <button onClick={handleUpdate} className="update-button">
               {isEditing ? "Save" : "Edit"}
             </button>
+            {isEditing && (
+              <button onClick={handleCancel} className="cancel-button">
+                Cancel
+              </button>
+            )}
             <button onClick={handleDelete} className="delete-button">
               Delete
             </button>

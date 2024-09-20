@@ -10,7 +10,7 @@ import Profile from "./components/ProfileForm";
 import PrivateRoute from "./components/PrivateRoute";
 import Register from "./components/Register";
 import UserPosts from "./components/UserPosts";
-import "./App.css"; // Updated import path
+import "./App.css";
 
 function NavBar() {
   const { user } = useAuth();

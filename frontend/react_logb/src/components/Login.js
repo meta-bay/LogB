@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link
 import { useAuth } from "../context/AuthContext";
 import "../styles/Login.css";
 
@@ -57,6 +57,13 @@ function Login() {
           {isLoading ? "Logging in..." : "Login"}
         </button>
       </form>
+
+      {/* Add the "Need an account? Register" link below the form */}
+      <div className="register-link">
+        <p>
+          Need an account? <Link to="/register">Register</Link>
+        </p>
+      </div>
     </div>
   );
 }

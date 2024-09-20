@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link
 import * as api from "../services/api";
 import "../styles/Register.css";
 
@@ -101,6 +101,13 @@ function Register() {
           {isLoading ? "Registering..." : "Register"}
         </button>
       </form>
+
+      {/* Add the "Already have an account? Login" link below the form */}
+      <div className="login-link">
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
     </div>
   );
 }
