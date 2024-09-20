@@ -1,0 +1,21 @@
+.post-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-form textarea {
+    min-height: 200px;
+}
+
+.post-form button {
+    width: 100%;
+}
